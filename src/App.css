@@ -20,3 +20,21 @@
 .App-link {
   color: #09d3ac;
 }
+
+.first-page{
+  background-color: #ff3499;
+  -webkit-transition: background-color 2s; /* For Safari 3.1 to 6.0 */
+  transition: background-color 2s;
+}
+
+.second-page{
+  background-color: #4499ff;
+  -webkit-transition: background-color 2s; /* For Safari 3.1 to 6.0 */
+  transition: background-color 2s;
+}
+
+.third-page{
+  background-color: #08ff99;
+  -webkit-transition: background-color 2s; /* For Safari 3.1 to 6.0 */
+  transition: background-color 2s;
+}
