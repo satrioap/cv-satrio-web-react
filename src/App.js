@@ -1,18 +1,17 @@
 import React from 'react';
 import './App.css';
-import Homepage from "./Containers/Homepage";
-import {ParallaxProvider} from "react-scroll-parallax/cjs";
+import Homepage from "./containers/Homepage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <ParallaxProvider>
+class App extends React.Component{
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
           <Homepage/>
-        </ParallaxProvider>
-      </header>
-    </div>
-  );
+        </header>
+      </div>
+    );
+  }
 }
 
 export default App;

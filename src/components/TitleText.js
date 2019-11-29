@@ -1,10 +1,10 @@
 import React from 'react';
 
 const TitleText = (props) => {
-  const {title} = props;
+  const {title, style} = props;
   return(
     <div>
-      <p style={{fontSize: 28}}>{title}</p>
+      <p style={{fontSize: 28, fontWeight: 300, ...style}}>{title}</p>
     </div>
   );
 };

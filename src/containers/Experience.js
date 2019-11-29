@@ -1,13 +1,11 @@
 import React from 'react';
 import '../index.css';
-import {Parallax} from "react-scroll-parallax/cjs";
-import TitleText from "../Components/TitleText";
+import NormalText from "../components/NormalText";
 
-const Profile = () => {
+const Experience = () => {
     return (
-      <Parallax>
-        <div style={{width: '100%', height: '100vh'}}>
-          <TitleText title="This is my profile"/>
+        <div style={{width: '100%', height: '96vh'}}>
+          <NormalText title="This is my experience"/>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -17,8 +15,7 @@ const Profile = () => {
             Learn React
           </a>
         </div>
-      </Parallax>
     );
 };
 
-export default Profile;
+export default Experience;

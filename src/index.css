@@ -11,3 +11,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.headerButton {
+  /*background-color: #1D285388;*/
+  background-color: #22222288;
+  -webkit-transition: background-color 200ms; /* For Safari 3.1 to 6.0 */
+  transition: background-color 200ms;
+}
+
+.headerButton:hover {
+  background-color: #ffffff16;
+}
+
+.animatedComponent {
+  -webkit-transition: background-color 500ms; /* For Safari 3.1 to 6.0 */
+  transition: background-color 500ms;
+}
+
+.panelTransparent {
+  background-image: linear-gradient(to top, #00143C, #1e2242, #1d1d3160, #19182240, #13131300);
+}
