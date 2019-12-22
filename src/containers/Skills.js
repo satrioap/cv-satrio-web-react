@@ -2,7 +2,7 @@ import React from 'react';
 import '../index.css';
 import SubTitle from "../components/SubTitle";
 import SmallText from "../components/SmallText";
-import {COLOR_PRIMARY, COLOR_SECONDARY} from "../utils/Colors";
+import {COLOR_PRIMARY} from "../utils/Colors";
 
 const skills = {
   technical: [
@@ -50,13 +50,20 @@ const skills = {
     },
     {
       name: 'JIRA',
-      value: 65,
+      value: 60,
     }
   ]
 };
 
 const SkillSet = ({skill}) => {
   const {name, value} =  skill;
+  const skillLevel = () => {
+    if (value <= 60) return  "skillColorBad";
+    if (value <= 70) return  "skillColorMedium";
+    if (value <= 85) return  "skillColorGood";
+    return "skillColorExcellent"
+  };
+
   return (
     <div style={{
       display: 'flex',
@@ -79,8 +86,7 @@ const SkillSet = ({skill}) => {
         borderRadius: 8,
         marginRight: 10,
       }}>
-        <div style={{
-          backgroundColor: COLOR_SECONDARY,
+        <div className={skillLevel()} style={{
           height:  16,
           width:  `${value}%`,
           borderRadius: 8,

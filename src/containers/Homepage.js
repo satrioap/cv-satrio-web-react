@@ -41,6 +41,10 @@ class Homepage extends React.Component{
     };
   };
 
+  _getButtonCSSColor = (selectedPage, thisPage) => {
+    if (selectedPage === thisPage) return "buttonColorGradient"
+  };
+
   _getFontWeight = (selectedPage, thisPage) => {
     if (selectedPage === thisPage) return {
       fontWeight: 600,
@@ -74,28 +78,28 @@ class Homepage extends React.Component{
           justifyContent: 'flex-end',
           marginRight: 20,
           alignItems: 'center'}}>
-          <div className="headerButton" style={{
+          <div className={`headerButton ${this._getButtonCSSColor(selectedPage, HOME_PAGE)}`} style={{
             ...buttonStyles,
-            ...this._getButtonColor(selectedPage, HOME_PAGE)}}
+          }}
             onClick={() => this._scrollTo(0)}>
             <SmallText title={HOME_PAGE} style={{...this._getFontWeight(selectedPage, HOME_PAGE)}}/>
           </div>
-          <div className="headerButton" style={{
+          <div className={`headerButton ${this._getButtonCSSColor(selectedPage, PROFILE_PAGE)}`} style={{
             ...buttonStyles,
-            ...this._getButtonColor(selectedPage, PROFILE_PAGE)}}
+          }}
             onClick={() => this._scrollTo(1)}>
             <SmallText title={PROFILE_PAGE} style={{...this._getFontWeight(selectedPage, PROFILE_PAGE)}}/>
           </div>
-          <div className="headerButton" style={{
+          <div className={`headerButton ${this._getButtonCSSColor(selectedPage, SKILLS_PAGE)}`} style={{
             ...buttonStyles,
-            ...this._getButtonColor(selectedPage, SKILLS_PAGE)}}
+          }}
             onClick={() => this._scrollTo(2)}>
             <SmallText title={SKILLS_PAGE} style={{...this._getFontWeight(selectedPage, SKILLS_PAGE)}}/>
           </div>
-          <div className="headerButton" style={{
+          <div className={`headerButton ${this._getButtonCSSColor(selectedPage, EXPERIENCE_PAGE)}`} style={{
             ...buttonStyles,
             marginRight: 16,
-            ...this._getButtonColor(selectedPage, EXPERIENCE_PAGE)}}
+          }}
             onClick={() => this._scrollTo(3)}>
             <SmallText title={EXPERIENCE_PAGE} style={{...this._getFontWeight(selectedPage, EXPERIENCE_PAGE)}}/>
           </div>
