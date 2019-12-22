@@ -28,7 +28,10 @@ const ProfileImage = (props) => {
           alignItems: 'center',
           justifyContent: 'center'
         }}>
-          <img src={require('../assets/images/satr-png.png')} style={{ width: '100%', paddingBottom: 11}} />
+          <img
+            alt=""
+            src={require('../assets/images/satr-png.png')}
+            style={{ width: '100%', paddingBottom: 11}} />
         </div>}
       </Spring>
     </div>
