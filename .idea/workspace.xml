@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78fc5aab-eea7-4829-9d7e-3887c7574561" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09dd5b20fc951d14f1635c2477e5ceb9231bfd38" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09dd5b20fc951d14f1635c2477e5ceb9231bfd38" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SubTitle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SmallText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SmallText.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Skills.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/WelcomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/WelcomeScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
