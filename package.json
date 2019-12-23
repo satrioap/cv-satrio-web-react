@@ -8,6 +8,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
+    "react-show": "^3.0.4",
     "react-spring": "^8.0.27",
     "react-useanimations": "^1.2.11"
   },

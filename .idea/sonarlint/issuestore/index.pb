@@ -56,3 +56,5 @@ J
 src/containers/Homepage.js,9/e/9e6afa093d6e96780cb8c0debae8538fcfe90477
 L
 src/containers/Experience.js,3/c/3c2bb460f674fabb80c7dd4323a39e7925927078
+J
+src/components/SubTitle.js,2/9/29d76ec50ddcae948e91e886a0dd4af2fae727e1

@@ -5,8 +5,8 @@ import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
 import ProfileImage from "../components/ProfileImage";
 import SmallText from "../components/SmallText";
 import {EXPERIENCE_PAGE, HOME_PAGE, PROFILE_PAGE, SKILLS_PAGE} from "../utils/Constant";
-import {COLOR_SECONDARY} from "../utils/Colors";
 import Skills from './Skills';
+import {Animate, easings} from 'react-show';
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 
@@ -16,6 +16,7 @@ class Homepage extends React.Component{
     this.state = {
       offset: 0,
       selectedPage: HOME_PAGE,
+      profileImagePosition: true,
     };
   }
 
@@ -25,6 +26,7 @@ class Homepage extends React.Component{
     this.setState({
       offset: page,
       selectedPage: this._getSelectedPage(page),
+      profileImagePosition: (this._getSelectedPage(page) === HOME_PAGE)
     })
   };
 
@@ -33,12 +35,6 @@ class Homepage extends React.Component{
     if (offset < 1.5) return PROFILE_PAGE;
     if (offset < 2.5) return SKILLS_PAGE;
     return EXPERIENCE_PAGE;
-  };
-
-  _getButtonColor = (selectedPage, thisPage) => {
-    if (selectedPage === thisPage) return {
-      backgroundColor: COLOR_SECONDARY,
-    };
   };
 
   _getButtonCSSColor = (selectedPage, thisPage) => {
@@ -63,8 +59,7 @@ class Homepage extends React.Component{
   };
 
   render() {
-    const {offset, selectedPage} = this.state;
-
+    const {offset, selectedPage, profileImagePosition} = this.state;
     return (
       <div onScroll={this.onScrollEvent} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <div style={{
@@ -113,10 +108,25 @@ class Homepage extends React.Component{
               style={{ zIndex: 0, objectFit: 'cover'}}/>
           </ParallaxLayer>
           <ParallaxLayer offset={1} speed={0.2} factor={1.4} style={{ backgroundColor: '#00143C', zIndex: 2 }}>
+            <div style={{
+              zIndex: 2,
+              backgroundColor: '#00000040',
+              height: '160vh',
+              width: '20%',
+              position: 'absolute',
+              left: 0,
+              right: 0,
+              top: 0,
+              bottom: 0,
+              borderTopLeftRadius: 24,
+              borderBottomLeftRadius: 24,
+              marginLeft: 12,
+              marginTop: 12,
+            }}/>
             <img
               alt=""
               src={require('../assets/images/mockup-2k.png')}
-              style={{ zIndex: 0,objectFit: 'cover'}}/>
+              style={{ zIndex: 0, objectFit: 'cover'}}/>
           </ParallaxLayer>
           <ParallaxLayer offset={2} speed={0} factor={1.2} style={{ backgroundColor: '#ff143C88',  zIndex: 3 }}>
             <img
@@ -140,9 +150,28 @@ class Homepage extends React.Component{
           <ParallaxLayer
             offset={0.1}
             speed={-0.6}
-            style={{display: 'flex', zIndex: 5, alignItems: 'center', justifyContent: 'center'}}>
+            style={{
+              display: 'flex',
+              zIndex: 5,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
             <div>
-              <ProfileImage offset={offset} />
+              <Animate
+                show={profileImagePosition}
+                duration={500}
+                easing={easings.easeOutSine}
+                style={{
+                  display: 'flex',
+                  marginLeft:'0vh',
+                }}
+                start={{
+                  display: 'flex',
+                  marginLeft: '-200vh',
+                }}
+              >
+                <ProfileImage offset={offset} />
+              </Animate>
             </div>
           </ParallaxLayer>
 

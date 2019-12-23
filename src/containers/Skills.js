@@ -1,8 +1,8 @@
 import React from 'react';
 import '../index.css';
-import SubTitle from "../components/SubTitle";
-import SmallText from "../components/SmallText";
-import {COLOR_PRIMARY} from "../utils/Colors";
+import SubTitle from '../components/SubTitle';
+import SmallText from '../components/SmallText';
+import {COLOR_PRIMARY} from '../utils/Colors';
 
 const skills = {
   technical: [
@@ -20,11 +20,11 @@ const skills = {
     },
     {
       name: 'GraphQL',
-      value: 70,
+      value: 60,
     },
     {
       name: 'MySQL',
-      value: 75
+      value: 65
     },
     {
       name: 'Image & Design Tools',
@@ -41,27 +41,39 @@ const skills = {
       value: 75,
     },
     {
-      name: 'UI/UX',
-      value: 95,
-    },
-    {
       name: 'Pair Programming',
       value: 80,
     },
     {
-      name: 'JIRA',
-      value: 60,
+      name: 'Naming Convention',
+      value: 85,
+    },
+    {
+      name: 'UI/UX',
+      value: 95,
+    },
+    {
+      name: 'TDD',
+      value: 70,
     }
   ]
 };
 
 const SkillSet = ({skill}) => {
   const {name, value} =  skill;
+
   const skillLevel = () => {
-    if (value <= 60) return  "skillColorBad";
-    if (value <= 70) return  "skillColorMedium";
-    if (value <= 85) return  "skillColorGood";
-    return "skillColorExcellent"
+    if (value <= 60) return  'skillColorBad';
+    if (value <= 70) return  'skillColorMedium';
+    if (value <= 85) return  'skillColorGood';
+    return 'skillColorExcellent'
+  };
+
+  const skillBarBackgroundColor = () => {
+    if (value <= 60) return  '#f8503233';
+    if (value <= 70) return  '#feb47b33';
+    if (value <= 85) return  '#93F9B933';
+    return '#00d2ff33'
   };
 
   return (
@@ -82,7 +94,7 @@ const SkillSet = ({skill}) => {
       <div style={{
         minWidth: 440,
         height: 16,
-        backgroundColor: '#dddddd60',
+        backgroundColor: skillBarBackgroundColor(),
         borderRadius: 8,
         marginRight: 10,
       }}>
@@ -122,7 +134,7 @@ const Skills = () => {
           </div>
         </div>
         <div style={{...container, marginRight: 40}}>
-          <SubTitle title="Practice Expertise"/>
+          <SubTitle title="Followed Practice"/>
           <div style={block}>
             <div style={{
               display: 'flex',
