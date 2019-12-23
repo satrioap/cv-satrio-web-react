@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78fc5aab-eea7-4829-9d7e-3887c7574561" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/satr-png-cropped.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09dd5b20fc951d14f1635c2477e5ceb9231bfd38" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09dd5b20fc951d14f1635c2477e5ceb9231bfd38" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileAvatar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Skills.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +99,7 @@
       <workItem from="1574994580969" duration="7549000" />
       <workItem from="1576739045191" duration="8851000" />
       <workItem from="1577035483185" duration="337000" />
-      <workItem from="1577087694271" duration="6201000" />
+      <workItem from="1577087694271" duration="7409000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1574311432704</created>
@@ -163,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577011944581</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="easi out animation to left for avatar">
+      <created>1577094768408</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1577094768408</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +191,7 @@
     <MESSAGE value="add component for skill set and subtitle" />
     <MESSAGE value="adding color coding for skillset expertise level" />
     <MESSAGE value="fix color coding" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix color coding" />
+    <MESSAGE value="easi out animation to left for avatar" />
+    <option name="LAST_COMMIT_MESSAGE" value="easi out animation to left for avatar" />
   </component>
 </project>

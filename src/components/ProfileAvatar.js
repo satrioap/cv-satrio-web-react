@@ -2,11 +2,12 @@ import React from "react";
 import '../index.css';
 import {Spring} from "react-spring/renderprops";
 
-const ProfileImage = (props) => {
-  const {offset} = props;
-  const opacity =  offset < 0.5 ? '20' : '';
+const ProfileAvatar = (props) => {
+  const {offset, size} = props;
   const scale = 100 -  offset * 90;
-  const backgroundScale = 204 * scale / 100  ;
+  const backgroundScale = (204 * scale / 100);
+  const imageSize = (size ? `${size}%`:'100%');
+  const opacity =  (size ? 0 : offset < 0.5 ? '20' : '');
 
   return(
     <div
@@ -36,7 +37,7 @@ const ProfileImage = (props) => {
             alt=""
             src={require('../assets/images/satr-png.png')}
             style={{
-              width: '100%',
+              width: imageSize,
               paddingBottom: 11,
               objectFit: 'cover'}} />
         </div>}
@@ -45,4 +46,4 @@ const ProfileImage = (props) => {
   )
 };
 
-export default ProfileImage
+export default ProfileAvatar

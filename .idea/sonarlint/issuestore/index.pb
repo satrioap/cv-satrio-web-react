@@ -32,8 +32,6 @@ A
 public/index.html,f/4/f43ecdf8d666ee908aacce037b4cd72159e4741b
 O
 src/Containers/WelcomeScreen.js,b/8/b8ddf694042931a678c7c54ac1be731379352a00
-N
-src/Components/ProfileImage.js,0/5/05d5dfd3c680bdfbf398b87a2c4ffb21338f9c38
 O
 src/containers/WelcomeScreen.js,b/a/ba668ffda9795d7372c5aa2f195815f5161e1662
 L
@@ -48,8 +46,6 @@ H
 src/containers/Skills.js,0/9/09dd5b20fc951d14f1635c2477e5ceb9231bfd38
 C
 src/utils/Colors.js,7/0/70ed577119ea54c9c109ae27f1d1f4dfba21fd3a
-N
-src/components/ProfileImage.js,d/5/d5815c5379f8b3c071820941bf85c6befc41689f
 =
 src/index.css,c/5/c5d38a62d1faae90a2acaa34b79a7ef365c917e4
 J
@@ -58,3 +54,5 @@ L
 src/containers/Experience.js,3/c/3c2bb460f674fabb80c7dd4323a39e7925927078
 J
 src/components/SubTitle.js,2/9/29d76ec50ddcae948e91e886a0dd4af2fae727e1
+O
+src/components/ProfileAvatar.js,2/7/27608c180b43d30496b3164a472960c345ede9a0

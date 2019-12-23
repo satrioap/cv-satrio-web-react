@@ -2,11 +2,12 @@ import React from 'react';
 import '../index.css';
 import WelcomeScreen from './WelcomeScreen';
 import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
-import ProfileImage from "../components/ProfileImage";
+import ProfileAvatar from "../components/ProfileAvatar";
 import SmallText from "../components/SmallText";
 import {EXPERIENCE_PAGE, HOME_PAGE, PROFILE_PAGE, SKILLS_PAGE} from "../utils/Constant";
 import Skills from './Skills';
 import {Animate, easings} from 'react-show';
+import {COLOR_PRIMARY} from "../utils/Colors";
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 
@@ -26,7 +27,7 @@ class Homepage extends React.Component{
     this.setState({
       offset: page,
       selectedPage: this._getSelectedPage(page),
-      profileImagePosition: (this._getSelectedPage(page) === HOME_PAGE)
+      profileImagePosition: (this._getSelectedPage(page) !== PROFILE_PAGE)
     })
   };
 
@@ -108,21 +109,61 @@ class Homepage extends React.Component{
               style={{ zIndex: 0, objectFit: 'cover'}}/>
           </ParallaxLayer>
           <ParallaxLayer offset={1} speed={0.2} factor={1.4} style={{ backgroundColor: '#00143C', zIndex: 2 }}>
-            <div style={{
-              zIndex: 2,
-              backgroundColor: '#00000040',
-              height: '160vh',
-              width: '20%',
-              position: 'absolute',
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
-              borderTopLeftRadius: 24,
-              borderBottomLeftRadius: 24,
-              marginLeft: 12,
-              marginTop: 12,
-            }}/>
+            <Animate
+              show={profileImagePosition}
+              duration={500}
+              easing={easings.easeOutSine}
+              style={{
+                zIndex: 2,
+                backgroundColor: COLOR_PRIMARY,
+                height: '160vh',
+                position: 'absolute',
+                width: '0%',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
+                borderRadius: 20,
+                marginLeft: 20,
+                marginTop: 20,
+              }}
+              start={{
+                zIndex: 2,
+                backgroundColor: COLOR_PRIMARY,
+                height: '160vh',
+                position: 'absolute',
+                width: '24%',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
+                borderRadius: 20,
+                marginLeft: 20,
+                marginTop: 20,
+              }}
+            >
+              <Animate
+                show={profileImagePosition}
+                duration={500}
+                easing={easings.easeOutSine}
+                style={{
+                  display: 'flex',
+                  marginLeft:'-200vh',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginTop: 20,
+                }}
+                start={{
+                  display: 'flex',
+                  marginLeft: '0vh',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginTop: 20,
+                }}
+              >
+                <ProfileAvatar offset={0} size={72}/>
+              </Animate>
+            </Animate>
             <img
               alt=""
               src={require('../assets/images/mockup-2k.png')}
@@ -170,7 +211,7 @@ class Homepage extends React.Component{
                   marginLeft: '-200vh',
                 }}
               >
-                <ProfileImage offset={offset} />
+                <ProfileAvatar offset={offset} />
               </Animate>
             </div>
           </ParallaxLayer>
