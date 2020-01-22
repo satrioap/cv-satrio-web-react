@@ -3,11 +3,11 @@ import '../index.css';
 import WelcomeScreen from './WelcomeScreen';
 import {Parallax, ParallaxLayer} from 'react-spring/renderprops-addons'
 import ProfileAvatar from "../components/ProfileAvatar";
-import SmallText from "../components/SmallText";
 import {EXPERIENCE_PAGE, HOME_PAGE, PROFILE_PAGE, SKILLS_PAGE} from "../utils/Constant";
 import Skills from './Skills';
 import {Animate, easings} from 'react-show';
-import {COLOR_PRIMARY} from "../utils/Colors";
+import {COLOR_PRIMARY} from '../utils/Colors';
+import {FiBriefcase, FiHome, FiSettings, FiUser} from 'react-icons/fi';
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 
@@ -17,7 +17,8 @@ class Homepage extends React.Component{
     this.state = {
       offset: 0,
       selectedPage: HOME_PAGE,
-      profileImagePosition: true,
+      isAvatarAnimating: true,
+      isSkillAnimating: false,
     };
   }
 
@@ -27,7 +28,8 @@ class Homepage extends React.Component{
     this.setState({
       offset: page,
       selectedPage: this._getSelectedPage(page),
-      profileImagePosition: (this._getSelectedPage(page) !== PROFILE_PAGE)
+      isAvatarAnimating: (this._getSelectedPage(page) !== PROFILE_PAGE),
+      isSkillAnimating: (this._getSelectedPage(page) !== SKILLS_PAGE),
     })
   };
 
@@ -60,46 +62,118 @@ class Homepage extends React.Component{
   };
 
   render() {
-    const {offset, selectedPage, profileImagePosition} = this.state;
+    const {offset, selectedPage, isAvatarAnimating, isSkillAnimating} = this.state;
     return (
       <div onScroll={this.onScrollEvent} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-        <div style={{
-          zIndex: 10,
-          position: 'absolute',
-          top: 0,
-          width: '100%',
-          height: 96,
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-          marginRight: 20,
-          alignItems: 'center'}}>
-          <div className={`headerButton ${this._getButtonCSSColor(selectedPage, HOME_PAGE)}`} style={{
-            ...buttonStyles,
+        <Animate
+          show={isAvatarAnimating}
+          duration={500}
+          easing={easings.easeOutBack}
+          style={{
+            zIndex: 10,
+            position: 'absolute',
+            left: 0,
+            width: '6%',
+            backgroundColor: COLOR_PRIMARY,
+            height: '90vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            borderRadius: 20,
+            marginLeft: 20
           }}
-            onClick={() => this._scrollTo(0)}>
-            <SmallText title={HOME_PAGE} style={{...this._getFontWeight(selectedPage, HOME_PAGE)}}/>
-          </div>
-          <div className={`headerButton ${this._getButtonCSSColor(selectedPage, PROFILE_PAGE)}`} style={{
-            ...buttonStyles,
+          start={{
+            zIndex: 10,
+            position: 'absolute',
+            left: 0,
+            width: '24%',
+            backgroundColor: COLOR_PRIMARY,
+            height: '90vh',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            borderRadius: 20,
+            marginLeft: 20
           }}
-            onClick={() => this._scrollTo(1)}>
-            <SmallText title={PROFILE_PAGE} style={{...this._getFontWeight(selectedPage, PROFILE_PAGE)}}/>
+        >
+          <Animate
+            show={isAvatarAnimating}
+            duration={400}
+            easing={easings.easeInCirc}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginLeft: 10,
+              marginRight: 10,
+              marginTop: 0,
+            }}
+            start={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginLeft: 10,
+              marginRight: 10,
+              marginTop: 48,
+            }}
+          >
+            <ProfileAvatar offset={offset} />
+          </Animate>
+          <div style={{
+            zIndex: 10,
+            position: 'absolute',
+            left: 0,
+            right: 0,
+            width: 102,
+            height: 96,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            paddingLeft: 10,
+          }}>
+            <div className={`headerButton ${this._getButtonCSSColor(selectedPage, HOME_PAGE)}`} style={{
+              ...buttonStyles,
+            }}
+                 onClick={() => this._scrollTo(0)}>
+              <FiHome/>
+              {/*<SmallText title={HOME_PAGE} style={{...this._getFontWeight(selectedPage, HOME_PAGE)}}/>*/}
+            </div>
+            <div className={`headerButton ${this._getButtonCSSColor(selectedPage, PROFILE_PAGE)}`} style={{
+              ...buttonStyles,
+            }}
+                 onClick={() => this._scrollTo(1)}>
+              <FiUser/>
+              {/*<SmallText title={PROFILE_PAGE} style={{...this._getFontWeight(selectedPage, PROFILE_PAGE)}}/>*/}
+            </div>
+            <div className={`headerButton ${this._getButtonCSSColor(selectedPage, SKILLS_PAGE)}`} style={{
+              ...buttonStyles,
+            }}
+                 onClick={() => this._scrollTo(2)}>
+              <FiSettings/>
+              {/*<SmallText title={SKILLS_PAGE} style={{...this._getFontWeight(selectedPage, SKILLS_PAGE)}}/>*/}
+            </div>
+            <div className={`headerButton ${this._getButtonCSSColor(selectedPage, EXPERIENCE_PAGE)}`} style={{
+              ...buttonStyles,
+              marginRight: 16,
+            }}
+                 onClick={() => this._scrollTo(3)}>
+              <FiBriefcase/>
+              {/*<SmallText title={EXPERIENCE_PAGE} style={{...this._getFontWeight(selectedPage, EXPERIENCE_PAGE)}}/>*/}
+            </div>
           </div>
-          <div className={`headerButton ${this._getButtonCSSColor(selectedPage, SKILLS_PAGE)}`} style={{
-            ...buttonStyles,
-          }}
-            onClick={() => this._scrollTo(2)}>
-            <SmallText title={SKILLS_PAGE} style={{...this._getFontWeight(selectedPage, SKILLS_PAGE)}}/>
-          </div>
-          <div className={`headerButton ${this._getButtonCSSColor(selectedPage, EXPERIENCE_PAGE)}`} style={{
-            ...buttonStyles,
-            marginRight: 16,
-          }}
-            onClick={() => this._scrollTo(3)}>
-            <SmallText title={EXPERIENCE_PAGE} style={{...this._getFontWeight(selectedPage, EXPERIENCE_PAGE)}}/>
-          </div>
-        </div>
+        </Animate>
+
 
         <Parallax scrolling={true} ref="parallax" pages={4}>
           <ParallaxLayer offset={0} speed={-0.4} factor={1} style={{ backgroundColor: '#00143C88', zIndex: 1 }}>
@@ -109,61 +183,61 @@ class Homepage extends React.Component{
               style={{ zIndex: 0, objectFit: 'cover'}}/>
           </ParallaxLayer>
           <ParallaxLayer offset={1} speed={0.2} factor={1.4} style={{ backgroundColor: '#00143C', zIndex: 2 }}>
-            <Animate
-              show={profileImagePosition}
-              duration={500}
-              easing={easings.easeOutSine}
-              style={{
-                zIndex: 2,
-                backgroundColor: COLOR_PRIMARY,
-                height: '160vh',
-                position: 'absolute',
-                width: '0%',
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                borderRadius: 20,
-                marginLeft: 20,
-                marginTop: 20,
-              }}
-              start={{
-                zIndex: 2,
-                backgroundColor: COLOR_PRIMARY,
-                height: '160vh',
-                position: 'absolute',
-                width: '24%',
-                left: 0,
-                right: 0,
-                top: 0,
-                bottom: 0,
-                borderRadius: 20,
-                marginLeft: 20,
-                marginTop: 20,
-              }}
-            >
-              <Animate
-                show={profileImagePosition}
-                duration={500}
-                easing={easings.easeOutSine}
-                style={{
-                  display: 'flex',
-                  marginLeft:'-200vh',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginTop: 20,
-                }}
-                start={{
-                  display: 'flex',
-                  marginLeft: '0vh',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginTop: 20,
-                }}
-              >
-                <ProfileAvatar offset={0} size={72}/>
-              </Animate>
-            </Animate>
+            {/*<Animate*/}
+            {/*  show={isAvatarAnimating}*/}
+            {/*  duration={500}*/}
+            {/*  easing={easings.easeOutSine}*/}
+            {/*  style={{*/}
+            {/*    zIndex: 2,*/}
+            {/*    height: '160vh',*/}
+            {/*    position: 'absolute',*/}
+            {/*    width: '0%',*/}
+            {/*    left: 0,*/}
+            {/*    right: 0,*/}
+            {/*    top: 0,*/}
+            {/*    bottom: 0,*/}
+            {/*    borderRadius: 20,*/}
+            {/*    marginLeft: 20,*/}
+            {/*    marginTop: 20,*/}
+            {/*  }}*/}
+            {/*  start={{*/}
+            {/*    zIndex: 2,*/}
+            {/*    height: '160vh',*/}
+            {/*    position: 'absolute',*/}
+            {/*    width: '24%',*/}
+            {/*    left: 0,*/}
+            {/*    right: 0,*/}
+            {/*    top: 0,*/}
+            {/*    bottom: 0,*/}
+            {/*    borderRadius: 20,*/}
+            {/*    marginLeft: 20,*/}
+            {/*    marginTop: 20,*/}
+            {/*  }}*/}
+            {/*>*/}
+            {/*  <Animate*/}
+            {/*    show={isAvatarAnimating}*/}
+            {/*    duration={800}*/}
+            {/*    easing={easings.easeOutSine}*/}
+            {/*    style={{*/}
+            {/*      zIndex: 10,*/}
+            {/*      display: 'flex',*/}
+            {/*      marginLeft:'-200vh',*/}
+            {/*      alignItems: 'center',*/}
+            {/*      justifyContent: 'center',*/}
+            {/*      marginTop: 20,*/}
+            {/*    }}*/}
+            {/*    start={{*/}
+            {/*      zIndex: 10,*/}
+            {/*      display: 'flex',*/}
+            {/*      marginLeft: '0vh',*/}
+            {/*      alignItems: 'center',*/}
+            {/*      justifyContent: 'center',*/}
+            {/*      marginTop: 20,*/}
+            {/*    }}*/}
+            {/*  >*/}
+            {/*    <ProfileAvatar offset={0} size={72}/>*/}
+            {/*  </Animate>*/}
+            {/*</Animate>*/}
             <img
               alt=""
               src={require('../assets/images/mockup-2k.png')}
@@ -198,21 +272,7 @@ class Homepage extends React.Component{
               justifyContent: 'center',
             }}>
             <div>
-              <Animate
-                show={profileImagePosition}
-                duration={500}
-                easing={easings.easeOutSine}
-                style={{
-                  display: 'flex',
-                  marginLeft:'0vh',
-                }}
-                start={{
-                  display: 'flex',
-                  marginLeft: '-200vh',
-                }}
-              >
-                <ProfileAvatar offset={offset} />
-              </Animate>
+
             </div>
           </ParallaxLayer>
 
@@ -220,7 +280,7 @@ class Homepage extends React.Component{
             offset={2.5}
             speed={1}
             style={styles}>
-            <Skills/>
+            <Skills isSkillAnimating={isSkillAnimating}/>
           </ParallaxLayer>
 
           <ParallaxLayer
@@ -254,10 +314,12 @@ const styles = {
 };
 
 const buttonStyles = {
-  borderRadius: 32, height: 48,
-  padding: '2px 24px 2px 24px',
-  margin: '0 8px 0 8px',
-  display: 'flex', alignItems: 'center',
+  borderRadius: 32,
+  height: 64,
+  padding: '12px 12px 12px 12px',
+  margin: '8px 8px 8px 8px',
+  display: 'flex',
+  alignItems: 'center',
 };
 
 export default Homepage;

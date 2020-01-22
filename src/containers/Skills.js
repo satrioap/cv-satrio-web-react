@@ -3,6 +3,7 @@ import '../index.css';
 import SubTitle from '../components/SubTitle';
 import SmallText from '../components/SmallText';
 import {COLOR_PRIMARY} from '../utils/Colors';
+import {Animate, easings} from "react-show";
 
 const skills = {
   technical: [
@@ -59,7 +60,7 @@ const skills = {
   ]
 };
 
-const SkillSet = ({skill}) => {
+const SkillSet = ({skill, isSkillAnimating}) => {
   const {name, value} =  skill;
 
   const skillLevel = () => {
@@ -92,35 +93,49 @@ const SkillSet = ({skill}) => {
         <SmallText title={name} style={{color: COLOR_PRIMARY, fontSize: 14, fontWeight: 400}}/>
       </div>
       <div style={{
-        minWidth: 440,
+        minWidth: 320,
         height: 16,
         backgroundColor: skillBarBackgroundColor(),
         borderRadius: 8,
         marginRight: 10,
       }}>
-        <div className={skillLevel()} style={{
-          height:  16,
-          width:  `${value}%`,
-          borderRadius: 8,
-        }}/>
+        <Animate
+          className={skillLevel()}
+          show={isSkillAnimating}
+          duration={800}
+          easing={easings.easeOutSine}
+          style={{
+            height:  16,
+            backgroundColor: COLOR_PRIMARY,
+            width: '0%',
+            borderRadius: 8,
+          }}
+          start={{
+            height:  16,
+            backgroundColor: COLOR_PRIMARY,
+            width:  `${value}%`,
+            borderRadius: 8,
+          }}
+        />
       </div>
     </div>
   )
 };
 
-const Skills = () => {
+const Skills = ({isSkillAnimating}) => {
   const {technical, practice} =  skills;
   return (
       <div style={{
         display: 'flex',
-        width: '100%',
+        width: '90%',
         height: '170vh',
         justifyContent: 'center',
         alignContent: 'center',
         flexDirection: 'row',
+        paddingLeft: '10%'
       }}>
         <div style={{...container, marginLeft: 40}}>
-          <SubTitle title="Technical Skills"/>
+          <SubTitle title="Technical Skills" isSkillAnimating={isSkillAnimating}/>
           <div style={block}>
             <div style={{
               display: 'flex',
@@ -129,12 +144,12 @@ const Skills = () => {
               alignItems: 'center',
               flexDirection: 'column'
             }}>
-              {technical.map(skill => <SkillSet skill={skill} />)}
+              {technical.map((skill, index) => <SkillSet key={index} skill={skill} isSkillAnimating={isSkillAnimating}/>)}
             </div>
           </div>
         </div>
         <div style={{...container, marginRight: 40}}>
-          <SubTitle title="Followed Practice"/>
+          <SubTitle title="Followed Practice" isSkillAnimating={isSkillAnimating}/>
           <div style={block}>
             <div style={{
               display: 'flex',
@@ -143,7 +158,7 @@ const Skills = () => {
               alignItems: 'center',
               flexDirection: 'column'
             }}>
-              {practice.map(skill => <SkillSet skill={skill} />)}
+              {practice.map((skill, index) => <SkillSet key={index} skill={skill} isSkillAnimating={isSkillAnimating}/>)}
             </div>
           </div>
         </div>

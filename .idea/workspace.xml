@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="78fc5aab-eea7-4829-9d7e-3887c7574561" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileAvatar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileAvatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileAvatar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SubTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SubTitle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Skills.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Skills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +28,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -39,12 +49,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -53,7 +66,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -100,6 +113,9 @@
       <workItem from="1576739045191" duration="8851000" />
       <workItem from="1577035483185" duration="337000" />
       <workItem from="1577087694271" duration="7409000" />
+      <workItem from="1577098360848" duration="607000" />
+      <workItem from="1577112373070" duration="136000" />
+      <workItem from="1577290844725" duration="6424000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1574311432704</created>
@@ -164,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577094768408</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add profile avatar to left nav bar">
+      <created>1577098507438</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1577098507438</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +215,7 @@
     <MESSAGE value="adding color coding for skillset expertise level" />
     <MESSAGE value="fix color coding" />
     <MESSAGE value="easi out animation to left for avatar" />
-    <option name="LAST_COMMIT_MESSAGE" value="easi out animation to left for avatar" />
+    <MESSAGE value="add profile avatar to left nav bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="add profile avatar to left nav bar" />
   </component>
 </project>

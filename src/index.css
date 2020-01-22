@@ -14,7 +14,7 @@ code {
 
 .headerButton {
   /*background-color: #1D285388;*/
-  background-color: #00000040;
+  background-color: #00000000;
   -webkit-transition: background-color 200ms; /* For Safari 3.1 to 6.0 */
   transition: background-color 200ms;
 }
