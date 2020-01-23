@@ -73,13 +73,14 @@ class Homepage extends React.Component{
             zIndex: 10,
             position: 'absolute',
             left: 0,
-            width: '6%',
+            right: 0,
+            width: '12vh',
             backgroundColor: BLACK_33,
             height: '90vh',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'flex-start',
+            alignItems: 'center',
             borderRadius: 20,
             marginLeft: 20
           }}
@@ -87,6 +88,7 @@ class Homepage extends React.Component{
             zIndex: 10,
             position: 'absolute',
             left: 0,
+            right: 0,
             width: '24%',
             backgroundColor: COLOR_PRIMARY,
             height: '90vh',
@@ -131,18 +133,16 @@ class Homepage extends React.Component{
           </Animate>
           <div style={{
             zIndex: 10,
-            position: 'absolute',
             left: 0,
             right: 0,
-            width: 102,
+            width: 85,
             height: 96,
+            bottom: 0,
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
-            paddingBottom: 180,
-            bottom: 0,
-            alignItems: 'flex-start',
-            paddingLeft: 10,
+            paddingBottom: 0,
+            alignItems: 'center',
           }}>
             <div className={`headerButton ${this._getButtonCSSColor(selectedPage, HOME_PAGE)}`} style={{
               ...buttonStyles,
@@ -259,7 +259,7 @@ class Homepage extends React.Component{
           <ParallaxLayer
             offset={0}
             speed={0.6}
-            style={{display: 'flex', zIndex: 10, alignItems: 'flex-end', justifyContent: 'center'}}>
+            style={{display: 'flex', zIndex: 10, alignItems: 'flex-end', justifyContent: 'center', marginLeft: 40, marginRight: 40}}>
             <WelcomeScreen onClick={() => this.refs.parallax.scrollTo(1)} />
           </ParallaxLayer>
           <ParallaxLayer
