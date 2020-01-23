@@ -6,8 +6,8 @@ import ProfileAvatar from "../components/ProfileAvatar";
 import {EXPERIENCE_PAGE, HOME_PAGE, PROFILE_PAGE, SKILLS_PAGE} from "../utils/Constant";
 import Skills from './Skills';
 import {Animate, easings} from 'react-show';
-import {COLOR_PRIMARY} from '../utils/Colors';
-import {FiBriefcase, FiHome, FiSettings, FiUser} from 'react-icons/fi';
+import {COLOR_PRIMARY, COLOR_PRIMARY_33} from '../utils/Colors';
+import {AiOutlineFileText, AiOutlineHome, AiOutlineTool, AiOutlineUser} from 'react-icons/ai';
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 
@@ -74,7 +74,7 @@ class Homepage extends React.Component{
             position: 'absolute',
             left: 0,
             width: '6%',
-            backgroundColor: COLOR_PRIMARY,
+            backgroundColor: COLOR_PRIMARY_33,
             height: '90vh',
             display: 'flex',
             flexDirection: 'column',
@@ -146,21 +146,21 @@ class Homepage extends React.Component{
               ...buttonStyles,
             }}
                  onClick={() => this._scrollTo(0)}>
-              <FiHome/>
+              <AiOutlineHome/>
               {/*<SmallText title={HOME_PAGE} style={{...this._getFontWeight(selectedPage, HOME_PAGE)}}/>*/}
             </div>
             <div className={`headerButton ${this._getButtonCSSColor(selectedPage, PROFILE_PAGE)}`} style={{
               ...buttonStyles,
             }}
                  onClick={() => this._scrollTo(1)}>
-              <FiUser/>
+              <AiOutlineUser/>
               {/*<SmallText title={PROFILE_PAGE} style={{...this._getFontWeight(selectedPage, PROFILE_PAGE)}}/>*/}
             </div>
             <div className={`headerButton ${this._getButtonCSSColor(selectedPage, SKILLS_PAGE)}`} style={{
               ...buttonStyles,
             }}
                  onClick={() => this._scrollTo(2)}>
-              <FiSettings/>
+              <AiOutlineTool/>
               {/*<SmallText title={SKILLS_PAGE} style={{...this._getFontWeight(selectedPage, SKILLS_PAGE)}}/>*/}
             </div>
             <div className={`headerButton ${this._getButtonCSSColor(selectedPage, EXPERIENCE_PAGE)}`} style={{
@@ -168,13 +168,11 @@ class Homepage extends React.Component{
               marginRight: 16,
             }}
                  onClick={() => this._scrollTo(3)}>
-              <FiBriefcase/>
+              <AiOutlineFileText/>
               {/*<SmallText title={EXPERIENCE_PAGE} style={{...this._getFontWeight(selectedPage, EXPERIENCE_PAGE)}}/>*/}
             </div>
           </div>
         </Animate>
-
-
         <Parallax scrolling={true} ref="parallax" pages={4}>
           <ParallaxLayer offset={0} speed={-0.4} factor={1} style={{ backgroundColor: '#00143C88', zIndex: 1 }}>
             <img

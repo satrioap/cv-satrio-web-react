@@ -7,7 +7,7 @@ const ProfileAvatar = (props) => {
   const threshold = (offset >= 2 ? 0 : offset >= 1 ? (2 - offset) : offset);
   const backgroundScale = 48 + (48 * 1.5 * threshold);
 
-  const opacity =  (size ? 0 : offset < 0.5 ? '0' : '20');
+  const opacity =  (size ? 0 : offset < 0.5 || offset > 1.5 ? '00' : '20');
 
   return(
     <div
