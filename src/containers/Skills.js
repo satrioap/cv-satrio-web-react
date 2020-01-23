@@ -2,7 +2,7 @@ import React from 'react';
 import '../index.css';
 import SubTitle from '../components/SubTitle';
 import SmallText from '../components/SmallText';
-import {COLOR_PRIMARY} from '../utils/Colors';
+import {WHITE} from '../utils/Colors';
 import {Animate, easings} from "react-show";
 
 const skills = {
@@ -90,7 +90,7 @@ const SkillSet = ({skill, isSkillAnimating}) => {
         marginRight: 10,
         justifyContent: 'flex-start',
       }}>
-        <SmallText title={name} style={{color: COLOR_PRIMARY, fontSize: 14, fontWeight: 400}}/>
+        <SmallText title={name} style={{color: WHITE, fontSize: 14, fontWeight: 400}}/>
       </div>
       <div style={{
         minWidth: 320,
@@ -106,13 +106,13 @@ const SkillSet = ({skill, isSkillAnimating}) => {
           easing={easings.easeOutSine}
           style={{
             height:  16,
-            backgroundColor: COLOR_PRIMARY,
+            backgroundColor: WHITE,
             width: '0%',
             borderRadius: 8,
           }}
           start={{
             height:  16,
-            backgroundColor: COLOR_PRIMARY,
+            backgroundColor: WHITE,
             width:  `${value}%`,
             borderRadius: 8,
           }}
@@ -135,7 +135,7 @@ const Skills = ({isSkillAnimating}) => {
         paddingLeft: '10%'
       }}>
         <div style={{...container, marginLeft: 40}}>
-          <SubTitle title="Technical Skills" isSkillAnimating={isSkillAnimating}/>
+          <SubTitle title="Technical Skills" isSkillAnimating={isSkillAnimating} textColor={WHITE}/>
           <div style={block}>
             <div style={{
               display: 'flex',
@@ -149,7 +149,7 @@ const Skills = ({isSkillAnimating}) => {
           </div>
         </div>
         <div style={{...container, marginRight: 40}}>
-          <SubTitle title="Followed Practice" isSkillAnimating={isSkillAnimating}/>
+          <SubTitle title="Followed Practice" isSkillAnimating={isSkillAnimating} textColor={WHITE}/>
           <div style={block}>
             <div style={{
               display: 'flex',

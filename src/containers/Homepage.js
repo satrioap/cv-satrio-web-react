@@ -6,7 +6,7 @@ import ProfileAvatar from "../components/ProfileAvatar";
 import {EXPERIENCE_PAGE, HOME_PAGE, PROFILE_PAGE, SKILLS_PAGE} from "../utils/Constant";
 import Skills from './Skills';
 import {Animate, easings} from 'react-show';
-import {COLOR_PRIMARY, COLOR_PRIMARY_33} from '../utils/Colors';
+import {COLOR_PRIMARY, BLACK_33, WHITE} from '../utils/Colors';
 import {AiOutlineFileText, AiOutlineHome, AiOutlineTool, AiOutlineUser} from 'react-icons/ai';
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
@@ -74,7 +74,7 @@ class Homepage extends React.Component{
             position: 'absolute',
             left: 0,
             width: '6%',
-            backgroundColor: COLOR_PRIMARY_33,
+            backgroundColor: BLACK_33,
             height: '90vh',
             display: 'flex',
             flexDirection: 'column',
@@ -124,7 +124,7 @@ class Homepage extends React.Component{
               justifyContent: 'center',
               marginLeft: 10,
               marginRight: 10,
-              marginTop: 48,
+              marginTop: 24,
             }}
           >
             <ProfileAvatar offset={offset} />
@@ -138,7 +138,9 @@ class Homepage extends React.Component{
             height: 96,
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
+            paddingBottom: 180,
+            bottom: 0,
             alignItems: 'flex-start',
             paddingLeft: 10,
           }}>
@@ -177,10 +179,10 @@ class Homepage extends React.Component{
           <ParallaxLayer offset={0} speed={-0.4} factor={1} style={{ backgroundColor: '#00143C88', zIndex: 1 }}>
             <img
               alt=""
-              src={require('../assets/images/astronot.jpg')}
+              src={require('../assets/images/magic-butt.png')}
               style={{ zIndex: 0, objectFit: 'cover'}}/>
           </ParallaxLayer>
-          <ParallaxLayer offset={1} speed={0.2} factor={1.4} style={{ backgroundColor: '#00143C', zIndex: 2 }}>
+          <ParallaxLayer offset={1} speed={0.2} factor={1.4} style={{ backgroundColor: WHITE, zIndex: 2 }}>
             {/*<Animate*/}
             {/*  show={isAvatarAnimating}*/}
             {/*  duration={500}*/}
@@ -236,15 +238,15 @@ class Homepage extends React.Component{
             {/*    <ProfileAvatar offset={0} size={72}/>*/}
             {/*  </Animate>*/}
             {/*</Animate>*/}
-            <img
-              alt=""
-              src={require('../assets/images/mockup-2k.png')}
-              style={{ zIndex: 0, objectFit: 'cover'}}/>
+            {/*<img*/}
+            {/*  alt=""*/}
+            {/*  src={require('../assets/images/mockup-2k.png')}*/}
+            {/*  style={{ zIndex: 0, objectFit: 'cover'}}/>*/}
           </ParallaxLayer>
           <ParallaxLayer offset={2} speed={0} factor={1.2} style={{ backgroundColor: '#ff143C88',  zIndex: 3 }}>
             <img
               alt=""
-              src={require('../assets/images/dashboard-small.jpg')}
+              src={require('../assets/images/astronot.jpg')}
               style={{ zIndex: 0, objectFit: 'cover'}}/>
           </ParallaxLayer>
           <ParallaxLayer offset={3} speed={0.3} style={{ backgroundColor: '#DD14ff88', zIndex: 4 }}>
@@ -275,7 +277,7 @@ class Homepage extends React.Component{
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={2.5}
+            offset={2.365}
             speed={1}
             style={styles}>
             <Skills isSkillAnimating={isSkillAnimating}/>
