@@ -6,7 +6,7 @@ import ProfileAvatar from "../components/ProfileAvatar";
 import {EXPERIENCE_PAGE, HOME_PAGE, PROFILE_PAGE, SKILLS_PAGE} from "../utils/Constant";
 import Skills from './Skills';
 import {Animate, easings} from 'react-show';
-import {COLOR_PRIMARY, BLACK_33, WHITE} from '../utils/Colors';
+import {SEMI_TRANSLUCENT, TRANSPARENT, WHITE} from '../utils/Colors';
 import {AiOutlineFileText, AiOutlineHome, AiOutlineTool, AiOutlineUser} from 'react-icons/ai';
 
 const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
@@ -75,12 +75,12 @@ class Homepage extends React.Component{
             left: 0,
             right: 0,
             width: '12vh',
-            backgroundColor: BLACK_33,
+            backgroundColor: TRANSPARENT,
             height: '90vh',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'center',
+            alignItems: 'flex-start',
             borderRadius: 20,
             marginLeft: 20
           }}
@@ -90,7 +90,7 @@ class Homepage extends React.Component{
             left: 0,
             right: 0,
             width: '24%',
-            backgroundColor: COLOR_PRIMARY,
+            backgroundColor: TRANSPARENT,
             height: '90vh',
             display: 'flex',
             flexDirection: 'column',
@@ -111,7 +111,7 @@ class Homepage extends React.Component{
               right: 0,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'flex-end',
               marginLeft: 10,
               marginRight: 10,
               marginTop: 0,
@@ -136,13 +136,12 @@ class Homepage extends React.Component{
             left: 0,
             right: 0,
             width: 85,
-            height: 96,
-            bottom: 0,
+            height: 0,
+            marginTop: 96,
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'flex-start',
-            paddingBottom: 0,
-            alignItems: 'center',
+            alignItems: 'flex-start',
           }}>
             <div className={`headerButton ${this._getButtonCSSColor(selectedPage, HOME_PAGE)}`} style={{
               ...buttonStyles,
@@ -259,7 +258,7 @@ class Homepage extends React.Component{
           <ParallaxLayer
             offset={0}
             speed={0.6}
-            style={{display: 'flex', zIndex: 10, alignItems: 'flex-end', justifyContent: 'center', marginLeft: 40, marginRight: 40}}>
+            style={{display: 'flex', zIndex: 10, alignItems: 'flex-end', justifyContent: 'center'}}>
             <WelcomeScreen onClick={() => this.refs.parallax.scrollTo(1)} />
           </ParallaxLayer>
           <ParallaxLayer
@@ -277,7 +276,7 @@ class Homepage extends React.Component{
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={2.365}
+            offset={2.38}
             speed={1}
             style={styles}>
             <Skills isSkillAnimating={isSkillAnimating}/>
@@ -316,6 +315,7 @@ const styles = {
 const buttonStyles = {
   borderRadius: 32,
   height: 64,
+  backgroundColor: SEMI_TRANSLUCENT,
   padding: '12px 12px 12px 12px',
   margin: '8px 8px 8px 8px',
   display: 'flex',
